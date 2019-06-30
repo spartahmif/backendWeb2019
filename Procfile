@@ -1,0 +1,1 @@
+web: gunicorn registrasi.wsgi --log-file -
