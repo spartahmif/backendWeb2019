@@ -102,4 +102,4 @@ class CustomLoginSerializer(serializers.Serializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.CustomUser
-        fields = ('name', 'nim')
+        fields = '__all__'
