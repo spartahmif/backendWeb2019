@@ -34,6 +34,7 @@ class CustomRegisterSerializer(RegisterSerializer):
 
     def get_cleaned_data(self):
         return {
+            'email': self.validated_data.get('email', ''),
             'password1': self.validated_data.get('password1', ''),
             'name': self.validated_data.get('name', ''),
             'nim': self.validated_data.get('nim', ''),
