@@ -103,4 +103,4 @@ class CustomLoginSerializer(serializers.Serializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.CustomUser
-        fields = '__all__'
+        fields = ('name', 'email', 'major', 'birth_date', 'birth_place', 'address', 'phone', 'blood_type', 'illness')
