@@ -34,6 +34,7 @@ class CustomRegisterSerializer(RegisterSerializer):
 
     def get_cleaned_data(self):
         return {
+            'email': self.validated_data.get('email', ''),
             'password1': self.validated_data.get('password1', ''),
             'name': self.validated_data.get('name', ''),
             'nim': self.validated_data.get('nim', ''),
@@ -102,4 +103,4 @@ class CustomLoginSerializer(serializers.Serializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.CustomUser
-        fields = '__all__'
+        fields = ('name', 'email', 'major', 'birth_date', 'birth_place', 'address', 'phone', 'blood_type', 'illness')
